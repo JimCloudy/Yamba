@@ -12,7 +12,7 @@ public class DBHelper extends SQLiteOpenHelper{
 	static final int DB_VERSION = 1;
 	static final String TABLE = "timeline";
 	static final String C_ID = BaseColumns._ID;
-	static final String C_CREATED_AT = "create_at";
+	static final String C_CREATED_AT = "created_at";
 	static final String C_SOURCE = "source";
 	static final String C_TEXT = "txt";
 	static final String C_USER = "user";

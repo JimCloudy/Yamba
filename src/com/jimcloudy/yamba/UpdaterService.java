@@ -3,9 +3,7 @@ package com.jimcloudy.yamba;
 import java.util.List;
 
 import winterwell.jtwitter.Twitter;
-import winterwell.jtwitter.TwitterException;
 import android.app.Service;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.IBinder;
@@ -68,25 +66,11 @@ public class UpdaterService extends Service{
 			{
 				Log.d(TAG,"Updater Running");
 				try{
-					try{
-						timeline = yamba.getTwitter().getFriendsTimeline();
+					YambaApplication yamba = (YambaApplication) updaterService.getApplication();
+					int newUpdates = yamba.fetchStatusUpdates();
+					if (newUpdates > 0){
+						Log.d(TAG,"We have a new status");
 					}
-					catch(TwitterException e){
-						Log.e(TAG,"Failed to connect to twitter service", e);
-					}
-					db = dbHelper.getWritableDatabase();
-					ContentValues values = new ContentValues();
-					for(Twitter.Status status : timeline){
-						values.clear();
-						values.put(DBHelper.C_ID,status.id);
-						values.put(DBHelper.C_CREATED_AT,status.createdAt.getTime());
-						values.put(DBHelper.C_TEXT,status.text);
-						values.put(DBHelper.C_USER,status.user.name);
-						db.insertOrThrow(DBHelper.TABLE, null, values);
-						Log.d(TAG,String.format("%s: %s", status.user.name, status.text));
-					}
-					db.close();
-					Log.d(TAG,"Updater Ran");
 					Thread.sleep(DELAY);
 				}
 				catch(InterruptedException e){
