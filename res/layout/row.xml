@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        
+        <TextView 
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:id="@+id/textUser"
+            android:text="Slashdot"
+            android:textStyle="bold"
+            android:textColor="#fff"/>
+        
+        <TextView 
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:id="@+id/textCreatedAt"
+            android:text="10 minutes ago"
+            android:textColor="#fff"/>
+        
+    </LinearLayout>
+    
+    <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/textText"
+        android:text="Firefox comes to android"
+        android:textColor="#fff"/>
+    
+</LinearLayout>

@@ -7,6 +7,9 @@
     <string name="hintText">Type your 140-character status in here.</string>
     <string name="textCount">000</string>
     
+    <string name="msgSetupPrefs">Please setup your account info</string>
+    <string name="msgAllDataPurged">Data has been Purged</string>
+    
     <string name="titleStatus">Status Update</string>
     <string name="titleUsername">Username</string>
     <string name="titlePassword">Password</string>
@@ -14,6 +17,9 @@
     <string name="titlePrefs">Prefs</string>
     <string name="titleServiceStart">Start Service</string>
     <string name="titleServiceStop">Stop Service</string>
+    <string name="titleTimeline">Timeline</string>
+    <string name="titlePurge">Get Stuff</string>
+    <string name="titleToggleService">Run Updates</string>
     
     <string name="summaryUsername">Please enter your username</string>
     <string name="summaryPassword">Please enter your password</string>

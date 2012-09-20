@@ -100,4 +100,15 @@ public class StatusData {
 			db.close();
 		}
 	}
+	
+	public void delete() {
+	    // Open Database
+	    SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+	    // Delete the data
+	    db.delete(TABLE, null, null);
+
+	    // Close Database
+	    db.close();
+	  }
 }
